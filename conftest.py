@@ -9,7 +9,5 @@ def pytest_addoption(parser):
 def browser(request):
     language = request.config.getoption("language")
     browser = webdriver.Chrome()
-    print("\nopen browser..")
     yield browser
-    print("\nquit browser..")
     browser.quit()
