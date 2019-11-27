@@ -13,3 +13,8 @@ class LoginPageLocators():
     LOGIN_PASSWORD = (By.CSS_SELECTOR, "#id_login-password")
 
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+
+class ProductPageLocators():
+    ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, ".btn.btn-lg.btn-primary.btn-add-to-basket")
+    PRODUCT_TITLE = (By.CSS_SELECTOR, ".product_main > h1")
+    PRODUCT_PRICE = (By.CSS_SELECTOR, ".price_color")
