@@ -18,3 +18,5 @@ class ProductPageLocators():
     ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, ".btn.btn-lg.btn-primary.btn-add-to-basket")
     PRODUCT_TITLE = (By.CSS_SELECTOR, ".product_main > h1")
     PRODUCT_PRICE = (By.CSS_SELECTOR, ".price_color")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert-success .alertinner > strong")
+    BUSKET_TOTAL = (By.CSS_SELECTOR, ".alert-info .alertinner > p > strong")
