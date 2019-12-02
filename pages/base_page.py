@@ -20,6 +20,11 @@ class BasePage():
         link.click()
 
 
+    def go_to_basket(self):
+        link = self.browser.find_element(*BasePageLocators.BASKET_LINK)
+        link.click()
+
+
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
 
@@ -51,8 +56,8 @@ class BasePage():
             print("No second alert presented")
 
 
-    def get_text_from_element(self, element):
-        return element.text
+    def get_text_from_element(self, how, what):
+        return self.browser.find_element(how, what).text
 
 
     def is_not_element_present(self, how, what, timeout=4):
