@@ -20,3 +20,6 @@ class LoginPage(BasePage):
         assert self.is_element_present(*LoginPageLocators.REGISTRATION_EMAIL) \
             and self.is_element_present(*LoginPageLocators.REGISTRATION_PASSWORD) \
                 and self.is_element_present(*LoginPageLocators.REGISTRATION_PASSWORD_CONFIRM), "No register form on login page"
+
+    def register_new_user(self, email, password):
+        pass

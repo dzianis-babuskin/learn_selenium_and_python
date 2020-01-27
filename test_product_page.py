@@ -55,3 +55,23 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
     page = ProductPage(browser, link)
     page.open()
     page.go_to_login_page()
+
+
+class TestUserAddToBasketFromProductPage():
+
+    def test_user_cant_see_success_message(self, browser):
+        link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
+        page = ProductPage(browser, link)
+        page.open()
+        assert page.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "success message is displayed after visiting page"
+
+    def test_user_can_add_product_to_basket(self, browser):
+        link = f"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer1"
+        page = ProductPage(browser, link)
+        page.open()
+        page.get_product_to_the_basket()
+        page.solve_quiz_and_get_code()
+        page.is_element_present(*ProductPageLocators.SUCCESS_MESSAGE)
+        page.is_element_present(*ProductPageLocators.BUSKET_TOTAL)
+    
